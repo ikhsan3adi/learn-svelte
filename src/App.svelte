@@ -4,28 +4,14 @@
   import Counter from "./lib/counter/Counter.svelte";
   import Calculator from "./lib/calculator-input-binding/Calculator.svelte";
   import ProgressList from "./lib/progress-list-props/ProgressList.svelte";
-
-  let isDarkThemeEnabled = true;
 </script>
 
-<main class={isDarkThemeEnabled ? "dark" : ""}>
-  <label for="darkToggle">
-    <div
-      class="fixed z-50 top-4 left-4 bg-white dark:bg-slate-900 dark:border rounded-md shadow-md p-2 cursor-pointer"
-    >
-      <span class="text-slate-800 dark:text-white">Dark theme</span>
-      <input
-        type="checkbox"
-        name="dark-theme"
-        id="darkToggle"
-        class="m-2"
-        bind:checked={isDarkThemeEnabled}
-      />
-    </div>
-  </label>
-
-  <div class="lg:flex lg:justify-evenly dark:bg-slate-800 dark:text-white">
-    <div class="m-12">
+<main>
+  <!-- Svelte + Vite logo -->
+  <div
+    class="lg:flex lg:justify-evenly dark:bg-slate-800 dark:text-white mt-16"
+  >
+    <div class="m-8">
       <div class="flex justify-center p-8">
         <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
           <img src={viteLogo} class="logo h-72" alt="Vite Logo" />
@@ -36,7 +22,7 @@
       </div>
       <h1 class="text-4xl font-semibold mx-auto text-center">Vite + Svelte</h1>
 
-      <div class="card mx-auto text-center m-4">
+      <div class="mx-auto text-center m-4">
         <Counter />
       </div>
 
@@ -52,6 +38,7 @@
         Click on the Vite and Svelte logos to learn more
       </p>
     </div>
+  </div>
 
     <div class="calculator sm:m-16">
       <Calculator />
