@@ -1,5 +1,5 @@
-<script>
-  export let sectionTitle;
+<script lang="ts">
+  export let sectionTitle: string;
 
   let left = 0;
   let right = 0;

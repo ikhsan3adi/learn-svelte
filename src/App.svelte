@@ -7,6 +7,7 @@
   import Counter from "./lib/counter/Counter.svelte";
   import Calculator from "./lib/calculator-input_binding/Calculator.svelte";
   import ProgressList from "./lib/progress-list_props/ProgressList.svelte";
+  import GithubProfile from "./lib/github-profile_promise/GithubProfile.svelte";
 </script>
 
 <main>
@@ -56,6 +57,11 @@
     <!-- Props -->
     <div class="mx-auto">
       <ProgressList sectionTitle="#2 Progress list card - Props" />
+    </div>
+
+    <!-- Async -->
+    <div class="mx-auto">
+      <GithubProfile sectionTitle="#3 Github profile - API call (promise)" />
     </div>
   </div>
 

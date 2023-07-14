@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let sectionTitle;
+  export let sectionTitle: string;
 
   import ProgressCard from "./ProgressCard.svelte";
 
