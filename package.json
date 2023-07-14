@@ -4,11 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "npm run css & vite",
+    "build": "npm run cssnowatch && vite build",
     "preview": "vite preview",
-    "css": "npx tailwindcss -i ./src/css/input.css -o ./public/css/style.css --watch",
-    "minicss": "npx tailwindcss -o ./public/css/style.css --minify"
+    "cssnowatch": "npx tailwindcss -i ./src/css/input.css -o ./public/css/style.css",
+    "css": "npx tailwindcss -i ./src/css/input.css -o ./public/css/style.css --watch"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^2.4.2",
