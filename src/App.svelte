@@ -2,11 +2,11 @@
   import svelteLogo from "./assets/svelte.svg";
   import viteLogo from "/vite.svg";
 
-  import Navbar from "./lib/navbar-reactivity/Navbar.svelte";
+  import Navbar from "./lib/navbar_reactivity/Navbar.svelte";
 
   import Counter from "./lib/counter/Counter.svelte";
-  import Calculator from "./lib/calculator-input-binding/Calculator.svelte";
-  import ProgressList from "./lib/progress-list-props/ProgressList.svelte";
+  import Calculator from "./lib/calculator-input_binding/Calculator.svelte";
+  import ProgressList from "./lib/progress-list_props/ProgressList.svelte";
 </script>
 
 <main>
