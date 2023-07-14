@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import svelteLogo from "./assets/svelte.svg";
   import viteLogo from "/vite.svg";
 
@@ -8,12 +8,25 @@
   import Calculator from "./lib/calculator-input_binding/Calculator.svelte";
   import ProgressList from "./lib/progress-list_props/ProgressList.svelte";
   import GithubProfile from "./lib/github-profile_promise/GithubProfile.svelte";
+
+  interface Sections {
+    id: string;
+    name: string;
+  }
+
+  const sections: Sections[] = [
+    { id: "#home", name: "Home" },
+    { id: "#calculator", name: "Calculator" },
+    { id: "#progressList", name: "Progress Card" },
+    { id: "#githubProfile", name: "Github Profile" },
+  ];
 </script>
 
 <main>
   <!-- Svelte + Vite logo -->
   <div
     class="lg:flex lg:justify-evenly dark:bg-slate-800 dark:text-white mt-16"
+    id="home"
   >
     <div class="m-8">
       <div class="flex justify-center p-8">
@@ -47,21 +60,33 @@
   <!-- Exercises -->
   <div class="w-full dark:bg-slate-800 py-8">
     <!-- Navbar -->
-    <Navbar />
+    <Navbar {sections} />
 
     <!-- Input Bindings -->
     <div class="mx-auto">
-      <Calculator sectionTitle="#1 Simple calculator - Input binding" />
+      <Calculator
+        section={{
+          id: "calculator",
+          title: "#1 Simple calculator - Input binding",
+        }}
+      />
     </div>
 
     <!-- Props -->
     <div class="mx-auto">
-      <ProgressList sectionTitle="#2 Progress list card - Props" />
+      <ProgressList
+        section={{ id: "progressList", title: "#2 Progress list card - Props" }}
+      />
     </div>
 
     <!-- Async -->
     <div class="mx-auto">
-      <GithubProfile sectionTitle="#3 Github profile - API call (promise)" />
+      <GithubProfile
+        section={{
+          id: "githubProfile",
+          title: "#3 Github profile - API call (promise)",
+        }}
+      />
     </div>
   </div>
 

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount } from "svelte";
 
-  export let sectionTitle: string;
+  export let section: { id: string; title: string };
 
   interface GithubUser {
     avatarUrl: string;
@@ -50,7 +50,7 @@
 </script>
 
 <section class="dark:text-white">
-  <h1 class="text-center">{sectionTitle}</h1>
+  <h1 class="text-center" id={section.id}>{section.title}</h1>
   <div class="card sm:mx-12 md:mx-36 xl:mx-48">
     <div class="lg:flex lg:justify-center lg:align-middle">
       {#await promise}

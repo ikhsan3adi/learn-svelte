@@ -1,5 +1,5 @@
 <script>
-  export let sections = [];
+  export let sections = [{ id: "#home", name: "Home" }];
 
   let isDarkThemeEnabled = true;
 
@@ -13,9 +13,25 @@
 <div
   class="fixed w-full top-0 left-0 right-0 bg-orange-500 z-50 py-2 px-2 sm:px-4 inline-flex justify-between text-white"
 >
-  <div class="inline-flex">
+  <!-- Logo -->
+  <div class="h-auto flex">
+    <a
+      href="https://github.com/ikhsan3adi/Learn-Svelte"
+      class="uppercase tracking-widest my-auto">Learn Svelte</a
+    >
+  </div>
+
+  <!-- Links -->
+  <div class="inline-flex gap-4 h-auto my-auto">
     {#each sections as section}
-      <div class="" />
+      <div class="">
+        <a
+          href={section.id}
+          class="hover:tracking-wide hover:text-blue-500 hover:underline transition-all"
+        >
+          {section.name}
+        </a>
+      </div>
     {/each}
   </div>
 

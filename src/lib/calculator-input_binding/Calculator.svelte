@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let sectionTitle: string;
+  export let section: { id: string; title: string };
 
   let left = 0;
   let right = 0;
@@ -21,7 +21,7 @@
 </script>
 
 <section>
-  <h1 class="text-center">{sectionTitle}</h1>
+  <h1 class="text-center" id={section.id}>{section.title}</h1>
   <div class="card mx-auto w-min">
     <div class="p-4 flex gap-2 mx-auto justify-center">
       <input

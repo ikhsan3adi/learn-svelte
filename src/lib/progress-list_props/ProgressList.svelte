@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let sectionTitle: string;
+  export let section: { id: string; title: string };
 
   import ProgressCard from "./ProgressCard.svelte";
 
@@ -23,7 +23,7 @@
 </script>
 
 <section>
-  <h1 class="text-center">{sectionTitle}</h1>
+  <h1 class="text-center" id={section.id}>{section.title}</h1>
   <div class="flex flex-wrap gap-2 justify-center">
     {#each progressList as progress}
       <ProgressCard {...progress} />
