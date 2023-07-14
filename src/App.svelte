@@ -1,6 +1,9 @@
 <script>
   import svelteLogo from "./assets/svelte.svg";
   import viteLogo from "/vite.svg";
+
+  import Navbar from "./lib/navbar-reactivity/Navbar.svelte";
+
   import Counter from "./lib/counter/Counter.svelte";
   import Calculator from "./lib/calculator-input-binding/Calculator.svelte";
   import ProgressList from "./lib/progress-list-props/ProgressList.svelte";
@@ -40,15 +43,19 @@
     </div>
   </div>
 
-    <div class="calculator sm:m-16">
-      <Calculator />
-    </div>
-  </div>
+  <!-- Exercises -->
+  <div class="w-full dark:bg-slate-800 py-8">
+    <!-- Navbar -->
+    <Navbar />
 
-  <!-- Here -->
-  <div class="w-full dark:bg-slate-800 py-24 flex">
+    <!-- Input Bindings -->
     <div class="mx-auto">
-      <ProgressList />
+      <Calculator sectionTitle="#1 Simple calculator - Input binding" />
+    </div>
+
+    <!-- Props -->
+    <div class="mx-auto">
+      <ProgressList sectionTitle="#2 Progress list card - Props" />
     </div>
   </div>
 

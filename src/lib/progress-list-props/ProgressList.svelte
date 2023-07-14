@@ -1,4 +1,6 @@
 <script lang="ts">
+  export let sectionTitle;
+
   import ProgressCard from "./ProgressCard.svelte";
 
   interface Progress {
@@ -20,10 +22,11 @@
   ];
 </script>
 
-<div class="p-4">
+<section>
+  <h1 class="text-center">{sectionTitle}</h1>
   <div class="flex flex-wrap gap-2 justify-center">
     {#each progressList as progress}
       <ProgressCard {...progress} />
     {/each}
   </div>
-</div>
+</section>
