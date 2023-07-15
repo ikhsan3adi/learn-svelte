@@ -1,4 +1,6 @@
 <script>
+  import { fly } from "svelte/transition";
+
   export let sections = [{ id: "#home", name: "Home" }];
 
   let isDarkThemeEnabled = true;
@@ -50,12 +52,11 @@
             bind:checked={isDarkThemeEnabled}
           />
           <div
-            class="w-10 h-6 bg-orange-400 rounded-full flex items-center p-0.5 my-auto ml-4"
+            class="w-10 h-6 bg-orange-400 rounded-full flex items-center p-0.5 my-auto ml-4 dark:bg-sky-600 duration-300"
             id="theme-toogle-bg"
           >
             <div
-              class="w-5 h-5 rounded-full bg-white my-auto"
-              id="theme-toggle"
+              class="w-5 h-5 rounded-full bg-white my-auto dark:translate-x-4 duration-300"
             />
           </div>
         </div>

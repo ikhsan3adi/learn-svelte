@@ -60,16 +60,34 @@
           <h2 class="text-center my-auto">Loading...</h2>
         </div>
       {:then data}
-        <div
-          class="rounded-full w-60 aspect-square max-lg:mx-auto sm:w-72 lg:w-80 bg-cover m-4"
-          style="background-image: url({data.avatarUrl});"
-        />
-      {:catch _}
-        <div
-          class="rounded-full w-60 aspect-square max-lg:mx-auto sm:w-72 lg:w-80 bg-cover m-4 flex justify-center bg-red-400"
+        <button
+          on:click={() => {
+            promise = new Promise(() => {});
+            setTimeout(() => {
+              promise = request();
+            }, 2000);
+          }}
         >
-          <h2 class="text-center my-auto">Error!</h2>
-        </div>
+          <div
+            class="rounded-full w-60 aspect-square max-lg:mx-auto sm:w-72 lg:w-80 bg-cover m-4"
+            style="background-image: url({data.avatarUrl});"
+          />
+        </button>
+      {:catch _}
+        <button
+          on:click={() => {
+            promise = new Promise(() => {});
+            setTimeout(() => {
+              promise = request();
+            }, 2000);
+          }}
+        >
+          <div
+            class="rounded-full w-60 aspect-square max-lg:mx-auto sm:w-72 lg:w-80 bg-cover m-4 flex justify-center bg-red-400"
+          >
+            <h2 class="text-center my-auto">Error!</h2>
+          </div>
+        </button>
       {/await}
 
       <div class="mx-auto pb-4 pt-4 lg:pt-6 xl:pt-8 lg:ml-8">
