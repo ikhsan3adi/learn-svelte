@@ -428,6 +428,7 @@ h1 {
   line-height: 2.25rem;
   font-weight: 600;
   line-height: 1.625;
+  transition-duration: 300ms;
 }
 
 :is(.dark h1) {
@@ -439,6 +440,7 @@ h2 {
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 600;
+  transition-duration: 300ms;
 }
 
 :is(.dark h2) {
@@ -450,6 +452,7 @@ h3 {
   margin-bottom: 0.25rem;
   font-size: 1.25rem;
   line-height: 1.75rem;
+  transition-duration: 300ms;
 }
 
 :is(.dark h3) {
@@ -461,6 +464,7 @@ h4 {
   margin-bottom: 0.25rem;
   font-size: 1.125rem;
   line-height: 1.75rem;
+  transition-duration: 300ms;
 }
 
 :is(.dark h4) {
@@ -471,6 +475,7 @@ h4 {
 section {
   margin: 2rem;
   margin-bottom: 4rem;
+  transition-duration: 300ms;
 }
 
 *, ::before, ::after {
@@ -586,6 +591,7 @@ section {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   --tw-shadow-color: #cbd5e1;
   --tw-shadow: var(--tw-shadow-colored);
+  transition-duration: 300ms;
 }
 
 :is(.dark .card) {
@@ -595,20 +601,6 @@ section {
   color: rgb(255 255 255 / var(--tw-text-opacity));
   --tw-shadow-color: #0f172a;
   --tw-shadow: var(--tw-shadow-colored);
-}
-
-#toggle:checked ~ #theme-toogle-bg > #theme-toggle {
-  --tw-translate-x: 1rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  --tw-bg-opacity: 1;
-  background-color: rgb(203 213 225 / var(--tw-bg-opacity));
-  transition: 0.2s;
-}
-
-#toggle:checked ~ #theme-toogle-bg {
-  --tw-bg-opacity: 1;
-  background-color: rgb(2 132 199 / var(--tw-bg-opacity));
-  transition: 0.2s;
 }
 
 .fixed {
@@ -947,6 +939,10 @@ section {
   transition-duration: 150ms;
 }
 
+.duration-300 {
+  transition-duration: 300ms;
+}
+
 .hover\:bg-sky-300:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(125 211 252 / var(--tw-bg-opacity));
@@ -965,8 +961,18 @@ section {
   text-decoration-line: underline;
 }
 
+:is(.dark .dark\:translate-x-4) {
+  --tw-translate-x: 1rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 :is(.dark .dark\:border) {
   border-width: 1px;
+}
+
+:is(.dark .dark\:bg-sky-600) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(2 132 199 / var(--tw-bg-opacity));
 }
 
 :is(.dark .dark\:bg-slate-700) {
