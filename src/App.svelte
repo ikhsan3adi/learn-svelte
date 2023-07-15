@@ -8,6 +8,7 @@
   import Calculator from "./lib/calculator-input_binding/Calculator.svelte";
   import ProgressList from "./lib/progress-list_props/ProgressList.svelte";
   import GithubProfile from "./lib/github-profile_promise/GithubProfile.svelte";
+  import Todo from "./lib/todo_deferred-transitions/Todo.svelte";
 
   interface Sections {
     id: string;
@@ -19,6 +20,7 @@
     { id: "#calculator", name: "Calculator" },
     { id: "#progressList", name: "Progress Card" },
     { id: "#githubProfile", name: "Github Profile" },
+    { id: "#todo", name: "Todo" },
   ];
 </script>
 
@@ -85,6 +87,16 @@
         section={{
           id: "githubProfile",
           title: "#3 Github profile - API call (promise)",
+        }}
+      />
+    </div>
+
+    <!-- Deferred transition -->
+    <div class="mx-auto">
+      <Todo
+        section={{
+          id: "todo",
+          title: "#4 Todo list - Deferred transition",
         }}
       />
     </div>

@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "npm run css & vite",
+    "dev": "vite",
     "build": "npm run cssnowatch && vite build",
     "preview": "vite preview",
     "cssnowatch": "npx tailwindcss -i ./src/css/input.css -o ./public/css/style.css",
