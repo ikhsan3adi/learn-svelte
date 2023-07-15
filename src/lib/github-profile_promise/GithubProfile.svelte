@@ -67,9 +67,10 @@
               promise = request();
             }, 2000);
           }}
+          class="block mx-auto"
         >
           <div
-            class="rounded-full w-60 aspect-square max-lg:mx-auto sm:w-72 lg:w-80 bg-cover m-4"
+            class="rounded-full w-60 aspect-square mx-auto sm:w-72 lg:w-80 bg-cover m-4"
             style="background-image: url({data.avatarUrl});"
           />
         </button>
