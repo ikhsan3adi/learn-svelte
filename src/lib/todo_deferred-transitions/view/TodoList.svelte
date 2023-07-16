@@ -1,4 +1,5 @@
 <script>
+  import { flip } from "svelte/animate";
   import { send, receive } from "../logic/transition.js";
 
   export let store;
@@ -9,7 +10,12 @@
 
 <ul>
   {#each $store.filter((todo) => todo.done === done) as todo (todo.id)}
-    <li class:done in:receive={{ key: todo.id }} out:send={{ key: todo.id }}>
+    <li
+      class:done
+      in:receive={{ key: todo.id }}
+      out:send={{ key: todo.id }}
+      animate:flip={{ duration: 200 }}
+    >
       <div class="p-2 bg-slate-200 dark:bg-slate-600 rounded-md my-2 w-full">
         <label class="flex justify-between flex-nowrap gap-4">
           <div class="flex justify-start flex-grow-0 md:w-9/12">
