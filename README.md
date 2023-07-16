@@ -8,6 +8,12 @@ My personal Svelte learning progress with Tailwind CSS.
 npm run build
 ```
 
+## Build CSS
+
+```bash
+npm run css
+```
+
 ## How to run
 
 :warning: Run build script above first!
