@@ -9,6 +9,7 @@
   import ProgressList from "./lib/progress-list_props/ProgressList.svelte";
   import GithubProfile from "./lib/github-profile_promise/GithubProfile.svelte";
   import Todo from "./lib/todo_deferred-transitions/Todo.svelte";
+  import PlayingCard from "./lib/playing-card_slot/PlayingCard.svelte";
 
   interface Sections {
     id: string;
@@ -21,6 +22,7 @@
     { id: "#progressList", name: "Progress Card" },
     { id: "#githubProfile", name: "Github Profile" },
     { id: "#todo", name: "Todo" },
+    { id: "#card", name: "Card game" },
   ];
 </script>
 
@@ -97,6 +99,16 @@
         section={{
           id: "todo",
           title: "#4 Todo list - Deferred transition",
+        }}
+      />
+    </div>
+
+    <!-- Slots -->
+    <div class="mx-auto">
+      <PlayingCard
+        section={{
+          id: "card",
+          title: "#5 Card game - Svelte slots",
         }}
       />
     </div>
