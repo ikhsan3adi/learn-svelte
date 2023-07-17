@@ -7,7 +7,7 @@ interface Todo {
   description: string;
 }
 
-const initial = [
+const initial: Todo[] = [
   { done: false, description: "write some docs" },
   { done: false, description: "start writing blog post" },
   { done: false, description: "buy some milk" },
@@ -17,7 +17,7 @@ const initial = [
 ];
 
 function createTodoStore() {
-  const todos: Array<any> = initial.map(({ done, description }) => {
+  const todos: Todo[] = initial.map(({ done, description }) => {
     return {
       id: nanoid(16),
       done,
