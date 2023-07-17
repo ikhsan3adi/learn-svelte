@@ -50,4 +50,5 @@ function createTodoStore() {
   };
 }
 
-export { createTodoStore, Todo };
+export { createTodoStore };
+export type { Todo };
