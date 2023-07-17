@@ -665,6 +665,10 @@ section {
   top: 0px;
 }
 
+.z-40 {
+  z-index: 40;
+}
+
 .z-50 {
   z-index: 50;
 }
@@ -707,10 +711,6 @@ section {
 
 .ml-3 {
   margin-left: 0.75rem;
-}
-
-.ml-4 {
-  margin-left: 1rem;
 }
 
 .mt-16 {
@@ -849,6 +849,10 @@ section {
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.flex-col {
+  flex-direction: column;
 }
 
 .flex-wrap {
@@ -1126,6 +1130,11 @@ section {
   background-color: rgb(125 211 252 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-slate-300:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(203 213 225 / var(--tw-bg-opacity));
+}
+
 .hover\:tracking-wide:hover {
   letter-spacing: 0.025em;
 }
@@ -1181,6 +1190,11 @@ section {
 :is(.dark .dark\:text-white) {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+:is(.dark .dark\:hover\:bg-slate-500:hover) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(100 116 139 / var(--tw-bg-opacity));
 }
 
 @media not all and (min-width: 1024px) {
@@ -1240,6 +1254,14 @@ section {
     margin-right: 9rem;
   }
 
+  .md\:ml-4 {
+    margin-left: 1rem;
+  }
+
+  .md\:block {
+    display: block;
+  }
+
   .md\:flex {
     display: flex;
   }
@@ -1281,6 +1303,14 @@ section {
 
   .lg\:flex {
     display: flex;
+  }
+
+  .lg\:inline-flex {
+    display: inline-flex;
+  }
+
+  .lg\:hidden {
+    display: none;
   }
 
   .lg\:w-80 {
