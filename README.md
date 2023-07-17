@@ -1,5 +1,7 @@
 # Learn Svelte
 
+[![GitHub Pages](https://github.com/ikhsan3adi/learn-svelte/actions/workflows/gh-pages.yml/badge.svg?branch=main)](https://github.com/ikhsan3adi/learn-svelte/actions/workflows/gh-pages.yml)
+
 My personal Svelte learning progress with Tailwind CSS.
 
 ## How to build
@@ -28,4 +30,4 @@ npm run preview
 npm run dev
 ```
 
-:warning: Warning. Don't minify your css, it will eliminate some custom styles in `src/css/input.css`
+:warning: Warning. Don't minify your css, it will eliminate all custom styles in `src/css/input.css`
