@@ -35,7 +35,7 @@
     {#each sections as section}
       <div class="">
         <a
-          href={section.id}
+          href="#{section.id}"
           class="hover:tracking-wide hover:text-blue-500 hover:underline transition-all"
         >
           {section.name}

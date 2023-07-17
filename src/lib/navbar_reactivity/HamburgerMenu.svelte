@@ -18,7 +18,7 @@
     <div class="absolute w-max card p-0 flex flex-col overflow-hidden">
       {#each sections as section}
         <a
-          href={section.id}
+          href="#{section.id}"
           class="dark:hover:bg-slate-500 hover:bg-slate-300 p-2 px-4 group transition-all"
         >
           {section.name}

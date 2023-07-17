@@ -2,6 +2,8 @@
   import svelteLogo from "./assets/svelte.svg";
   import viteLogo from "/vite.svg";
 
+  import type { ComponentType } from "svelte";
+
   import Navbar from "./lib/navbar_reactivity/Navbar.svelte";
 
   import Counter from "./lib/counter/Counter.svelte";
@@ -14,15 +16,41 @@
   interface Sections {
     id: string;
     name: string;
+    title: string;
+    component: ComponentType;
   }
 
   const sections: Sections[] = [
-    { id: "#home", name: "Home" },
-    { id: "#calculator", name: "Calculator" },
-    { id: "#progressList", name: "Progress Card" },
-    { id: "#githubProfile", name: "Github Profile" },
-    { id: "#todo", name: "Todo" },
-    { id: "#card", name: "Card game" },
+    {
+      id: "calculator",
+      name: "Calculator",
+      title: "#1 Simple calculator - Input binding",
+      component: Calculator,
+    },
+    {
+      id: "progressList",
+      name: "Progress Card",
+      title: "#2 Progress list card - Props",
+      component: ProgressList,
+    },
+    {
+      id: "githubProfile",
+      name: "Github Profile",
+      title: "#3 Github profile - API call (promise)",
+      component: GithubProfile,
+    },
+    {
+      id: "todo",
+      name: "Todo",
+      title: "#4 Todo list - Deferred transition",
+      component: Todo,
+    },
+    {
+      id: "card",
+      name: "Card game",
+      title: "#5 Card game - Svelte slots",
+      component: PlayingCard,
+    },
   ];
 </script>
 
@@ -64,54 +92,24 @@
   <!-- Exercises -->
   <div class="w-full dark:bg-slate-800 py-8">
     <!-- Navbar -->
-    <Navbar {sections} />
+    <Navbar
+      sections={[
+        {
+          id: "home",
+          name: "Home",
+          title: "Home",
+          component: null,
+        },
+        ...sections,
+      ]}
+    />
 
-    <!-- Input Bindings -->
-    <div class="mx-auto">
-      <Calculator
-        section={{
-          id: "calculator",
-          title: "#1 Simple calculator - Input binding",
-        }}
-      />
-    </div>
-
-    <!-- Props -->
-    <div class="mx-auto">
-      <ProgressList
-        section={{ id: "progressList", title: "#2 Progress list card - Props" }}
-      />
-    </div>
-
-    <!-- Async -->
-    <div class="mx-auto">
-      <GithubProfile
-        section={{
-          id: "githubProfile",
-          title: "#3 Github profile - API call (promise)",
-        }}
-      />
-    </div>
-
-    <!-- Deferred transition -->
-    <div class="mx-auto">
-      <Todo
-        section={{
-          id: "todo",
-          title: "#4 Todo list - Deferred transition",
-        }}
-      />
-    </div>
-
-    <!-- Slots -->
-    <div class="mx-auto">
-      <PlayingCard
-        section={{
-          id: "card",
-          title: "#5 Card game - Svelte slots",
-        }}
-      />
-    </div>
+    <!-- Use svelte dynamic component -->
+    {#each sections as section}
+      <div class="mx-auto">
+        <svelte:component this={section.component} {section} />
+      </div>
+    {/each}
   </div>
 
   <div class="dark:bg-slate-800 w-full h-[500px]" />
