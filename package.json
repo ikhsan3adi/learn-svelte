@@ -12,11 +12,11 @@
     "deploy": "npm run build && npx gh-pages -d dist"
   },
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^2.4.2",
+    "@sveltejs/vite-plugin-svelte": "^3.1.2",
     "gh-pages": "^5.0.0",
     "svelte": "^4.0.3",
     "tailwindcss": "^3.3.2",
-    "vite": "^4.5.2"
+    "vite": "^5.4.21"
   },
   "dependencies": {
     "@okrad/svelte-progressbar": "^2.2.0",
